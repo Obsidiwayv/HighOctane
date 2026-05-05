@@ -8,14 +8,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-          </set>
-        </option>
-        <option name="myGradleHome" value="" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/AetherColor" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/AetherColor" />
           </set>
         </option>

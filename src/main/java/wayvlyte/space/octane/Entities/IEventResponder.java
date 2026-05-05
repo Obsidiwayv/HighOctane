@@ -12,10 +12,10 @@ public interface IEventResponder<T extends Event> {
      *
      * @return Event type provided by the method implemented
      */
-    public T GetEventClass();
+    Class<T> GetEventClass();
     /**
      * Execute the event the bot has registered
      * @return Mono that could return anything from this event
      */
-    public Mono<?> Execute(T EventContext);
+    Mono<?> Execute(T EventContext);
 }
