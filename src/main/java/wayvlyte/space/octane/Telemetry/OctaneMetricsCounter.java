@@ -1,10 +1,10 @@
 package wayvlyte.space.octane.Telemetry;
 
-public class MetricsTag {
+public class OctaneMetricsCounter {
     private int Index = 0;
     private final String TagName;
 
-    public MetricsTag(String TagName) {
+    public OctaneMetricsCounter(String TagName) {
         this.TagName = TagName;
     }
 
@@ -16,11 +16,11 @@ public class MetricsTag {
         Index--;
     }
 
-    public String getTagName() {
+    public String GetName() {
         return TagName;
     }
 
-    public int getIndex() {
+    public int GetIndex() {
         return Index;
     }
 }
