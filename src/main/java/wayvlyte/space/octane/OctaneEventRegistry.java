@@ -3,18 +3,15 @@ package wayvlyte.space.octane;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.Event;
 import wayvlyte.space.octane.Entities.IEventResponder;
+import wayvlyte.space.octane.Enums.EEventType;
 import wayvlyte.space.octane.Telemetry.OctaneMetrics;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OctaneEventRegistry {
-    public enum EType {
-        DiscordEvent,
-        InternalEvent
-    }
 
-    public record EventEntry(String EventName, Boolean Active, EType EventType) {}
+    public record EventEntry(String EventName, Boolean Active, EEventType EventType) {}
 
     private final static List<String> DISCORD_EVENT_NAMES = List.of(
             "DiscordReady",
@@ -41,7 +38,7 @@ public class OctaneEventRegistry {
             }
             /* Add the event once it has been successfully registered */
             REGISTERED_EVENTS.add(
-                    new EventEntry(EventName, bActivated, EType.DiscordEvent));
+                    new EventEntry(EventName, bActivated, EEventType.DiscordEvent));
             System.out.printf("Registered Discord event: %s%n", EventName);
         }
     }
