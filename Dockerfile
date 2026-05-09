@@ -5,5 +5,5 @@ RUN gradle shadowJar --no-daemon
 
 FROM eclipse-temurin:25-jre-noble
 WORKDIR /app
-COPY --from=build /home/gradle/src/build/lib/HighOctane-1.0-all.jar app.jar
+COPY --from=build /home/gradle/src/build/libs/HighOctane-1.0-all.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
