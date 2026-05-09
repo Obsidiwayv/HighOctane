@@ -1,5 +1,5 @@
 FROM gradle:9.5-jdk25-noble
-COPY --chowne-gradle:gradle . /home/gradle/src/
+COPY --chown-gradle:gradle . /home/gradle/src/
 WORKDIR /home/gradle/src
 RUN gradle shadowJar --no-daemon
 
