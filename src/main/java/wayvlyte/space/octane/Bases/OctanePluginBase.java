@@ -12,7 +12,9 @@ public class OctanePluginBase {
             Class<?> CommandClass = Command.getClass();
             if (CommandClass.isAnnotationPresent(CLOctaneCommand.class)) {
                 CLOctaneCommand Metadata = CommandClass.getAnnotation(CLOctaneCommand.class);
-                OctaneCommandRegistry.PluginCommands.add(new CommandMeta(Metadata, Command));
+
+                OctaneCommandRegistry.GetCommands()
+                        .put(Metadata.Name(), new CommandMeta(Metadata, Command));
             }
         }
     }

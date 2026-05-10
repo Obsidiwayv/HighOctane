@@ -1,4 +1,4 @@
-package wayvlyte.space.octane;
+package wayvlyte.space.octane.Core;
 
 public class OctaneUtil {
     public static Object LoadClass(String ClassName) {

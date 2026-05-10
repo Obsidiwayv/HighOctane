@@ -1,7 +1,9 @@
 package wayvlyte.space.octane.Telemetry;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class OctaneMetricsCounter {
-    private int Index = 0;
+    private final AtomicInteger Index = new AtomicInteger(0);
     private final String TagName;
 
     public OctaneMetricsCounter(String TagName) {
@@ -9,18 +11,18 @@ public class OctaneMetricsCounter {
     }
 
     public void Inc() {
-        Index++;
+        Index.incrementAndGet();
     }
 
     public void Dec() {
-        Index--;
+        Index.decrementAndGet();
     }
 
     public String GetName() {
         return TagName;
     }
 
-    public int GetIndex() {
+    public AtomicInteger GetIndex() {
         return Index;
     }
 }

@@ -27,6 +27,11 @@ tasks.jar {
     }
 }
 
+tasks.shadowJar {
+    archiveVersion.set("")
+    archiveClassifier.set("Apex")
+}
+
 tasks.test {
     useJUnitPlatform()
 }

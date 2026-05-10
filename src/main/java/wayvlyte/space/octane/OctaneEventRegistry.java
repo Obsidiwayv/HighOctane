@@ -2,6 +2,7 @@ package wayvlyte.space.octane;
 
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.Event;
+import wayvlyte.space.octane.Core.OctaneUtil;
 import wayvlyte.space.octane.Entities.IEventResponder;
 import wayvlyte.space.octane.Enums.EEventType;
 import wayvlyte.space.octane.Telemetry.OctaneMetrics;
@@ -16,7 +17,8 @@ public class OctaneEventRegistry {
     private final static List<String> DISCORD_EVENT_NAMES = List.of(
             "DiscordReady",
             "DiscordGuildJoin",
-            "DiscordGuildLeave"
+            "DiscordGuildLeave",
+            "DiscordMessageCreate"
     );
 
     // Nothing here yet
@@ -41,6 +43,10 @@ public class OctaneEventRegistry {
                     new EventEntry(EventName, bActivated, EEventType.DiscordEvent));
             System.out.printf("Registered Discord event: %s%n", EventName);
         }
+    }
+
+    public static List<EventEntry> GetRegistered() {
+        return REGISTERED_EVENTS;
     }
 
     /**

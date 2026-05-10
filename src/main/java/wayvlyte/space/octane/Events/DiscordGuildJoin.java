@@ -17,6 +17,8 @@ public class DiscordGuildJoin implements IEventResponder<GuildCreateEvent> {
         /* Counting up on the guilds meter */
         OctaneMetrics.GUILDS.Inc();
 
+        System.out.println("Joined guild");
+
         return Mono.empty();
     }
 }
